@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VL Imposter Game</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Add any additional styles here */
+        #timer {
+            position: absolute; 
+            top: 10px; 
+            left: 10px; 
+            font-size: 20px; 
+            color: white; 
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Homepage -->
+    <div id="homepage">
+        <h1>VL Imposter</h1>
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <button id="enterButton">Enter Game</button>
+    </div>
+
+    <!-- Lobby -->
+    <div id="lobby" class="hidden">
+        <h2>Lobby</h2>
+        <p id="playerCount">Players: 0</p>
+        <ul id="playerList"></ul>
+        <button id="startButton" class="hidden">Start Game</button>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="gameScreen" class="hidden">
+        <h2 id="wordDisplay">Your word: </h2>
+        <p id="timer" style="font-size: 20px;">Time : 120s</p>
+        <div id="chatMessages"></div>
+        <input type="text" id="chatInput" placeholder="Type your message...">
+        <button id="sendChatButton">Send</button>
+    </div>
+
+   <!-- Voting Screen -->
+<div id="votingScreen" class="hidden">
+    <h2>Vote for Elimination</h2>
+    <p id="votingTimer" style="font-size: 20px; position: absolute; top: 10px; left: 10px;">Voting Time: 20s</p> <!-- Timer here -->
+    <ul id="voteList"></ul>
+    <button id="voteButton">Submit Vote</button>
+</div>
+
+    <!-- Elimination Screen -->
+    <div id="eliminationScreen" class="hidden">
+        <h2>Elimination Result</h2>
+        <p id="eliminatedPlayer"></p>
+        <p id="imposterReveal"></p>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+    body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+    background-image: url('https://i.imgur.com/htIEWFd.jpeg');
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+}
+
+.hidden {
+    display: none;
+}
+
+#homepage, #lobby, #gameScreen, #votingScreen, #eliminationScreen {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.7); /* Slightly transparent dark background */
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 80%;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    background-color: white;
+    color: black;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: lightgray;
+}
+
+#startButton {
+    background-color: #FFD700;
+    color: white;
+    display: none;
+    margin-top: 20px;
+}
+
+#startButton:hover {
+    background-color: #FFD700;
+}
+
+#wordDisplay, #timer {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+#timer {
+    font-size: 32px;
+    color: #FFD700; /* Golden color for the timer */
+}
+
+#chatMessages {
+    height: 150px;
+    overflow-y: scroll;
+    border: 1px solid white;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#chatMessages p {
+    margin: 5px 0;
+    color: white; /* Keeps the message part white */
+}
+
+#chatMessages p span {
+    color: #FFD700; /* Golden color for the player name */
+}
+
+#chatInput {
+    width: 70%;
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+}
+
+#sendChatButton {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #FFD700;
+    color: white;
+    border: none;
+    margin-left: 10px;
+}
+
+#sendChatButton:hover {
+    background-color: #FFD700;
+}
+
+#voteList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#voteList li {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#voteList li.selected {
+    background-color: #FFD700; /* Highlight selected player in golden color */
+}
+
+#voteButton {
+    background-color: #FFD700;
+    color: white;
+    margin-top: 10px;
+}
+
+#voteButton:hover {
+    background-color: #FFD700;
+}
+
+#eliminatedPlayer, #imposterReveal {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+#votingTimer {
+    font-size: 28px;
+    color: #FFD700;
+    margin-bottom: 10px;
+}
