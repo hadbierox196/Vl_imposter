@@ -143,6 +143,7 @@ const resetGame = () => {
     // Optionally reset player state if needed
 };
 
-server.listen(port, () => {
+// Set the host to '0.0.0.0' to allow external connections
+server.listen(port, '0.0.0.0', () => {
     console.log(`Server running on port ${port}`);
 });
