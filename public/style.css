@@ -55,14 +55,14 @@ button:hover {
 }
 
 #startButton {
-    background-color: #FFD700;
+    background-color: ##A020F0;
     color: white;
     display: none;
     margin-top: 20px;
 }
 
 #startButton:hover {
-    background-color: #FFD700;
+    background-color: ##A020F0;
 }
 
 #wordDisplay, #timer {
@@ -72,7 +72,7 @@ button:hover {
 
 #timer {
     font-size: 32px;
-    color: #FFD700; /* Golden color for the timer */
+    color: ##A020F0; /* Golden color for the timer */
 }
 
 #chatMessages {
@@ -89,7 +89,7 @@ button:hover {
 }
 
 #chatMessages p span {
-    color: #FFD700; /* Golden color for the player name */
+    color: ##A020F0; /* Golden color for the player name */
 }
 
 #chatInput {
@@ -102,14 +102,14 @@ button:hover {
 #sendChatButton {
     padding: 10px;
     border-radius: 10px;
-    background-color: #FFD700;
+    background-color: ##A020F0;
     color: white;
     border: none;
     margin-left: 10px;
 }
 
 #sendChatButton:hover {
-    background-color: #FFD700;
+    background-color: ##A020F0;
 }
 
 #voteList {
@@ -126,17 +126,17 @@ button:hover {
 }
 
 #voteList li.selected {
-    background-color: #FFD700; /* Highlight selected player in golden color */
+    background-color: ##A020F0; /* Highlight selected player in golden color */
 }
 
 #voteButton {
-    background-color: #FFD700;
+    background-color: ##A020F0;
     color: white;
     margin-top: 10px;
 }
 
 #voteButton:hover {
-    background-color: #FFD700;
+    background-color: ##A020F0;
 }
 
 #eliminatedPlayer, #imposterReveal {
@@ -146,6 +146,6 @@ button:hover {
 
 #votingTimer {
     font-size: 28px;
-    color: #FFD700;
+    color: #A020F0;
     margin-bottom: 10px;
 }
