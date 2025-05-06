@@ -1,10 +1,19 @@
 const express = require('express');
 const http = require('http');
 const socketIo = require('socket.io');
+const path = require('path');
 
 const app = express();
 const server = http.createServer(app);
-const io = socketIo(server);
+
+// Configure Socket.io with CORS and polling fallback for Vercel
+const io = socketIo(server, {
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"]
+  },
+  transports: ['polling', 'websocket']
+});
 
 const port = process.env.PORT || 3000;
 
@@ -33,7 +42,17 @@ let votes = {};
 let gameStarted = false; // Track whether the game has started
 
 // Serve static files
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Add a health check route for Vercel
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
+});
+
+// Make sure homepage is served
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 io.on('connection', (socket) => {
     console.log('New player connected:', socket.id);
@@ -143,7 +162,12 @@ const resetGame = () => {
     // Optionally reset player state if needed
 };
 
-// Set the host to '0.0.0.0' to allow external connections
-server.listen(port, '0.0.0.0', () => {
-    console.log(`Server running on port ${port}`);
-});
+// For local development
+if (process.env.NODE_ENV !== 'production') {
+    server.listen(port, '0.0.0.0', () => {
+        console.log(`Server running on port ${port}`);
+    });
+}
+
+// Export the app and server for Vercel
+module.exports = server;
